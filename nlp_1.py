@@ -44,7 +44,7 @@ blob.detect_language()
 
 spanish = blob.translate(to="es")
 
-print(spanish)'''
+print(spanish)
 
 
 from textblob import Word
@@ -59,9 +59,32 @@ word = Word("theyr")
 print(word.spellcheck())
 corrected_word = word.correct()
 
-sentence = TextBlob("Ths sentense has mispeled wrds.")
+sentence = TextBlob("Ths sentense has mispelled wrds.")
 corrected_sentence = sentence.correct()
 
 
-print(corrected_sentence)
-print(corrected_word)
+# print(corrected_sentence)
+# print(corrected_word)'''
+
+##########################################################
+##########################################################
+
+# Stemming algorithms work by cutting off the end or beginning of the word, taking
+# common prefizes and suffixes that can be foudn in an inflected word.
+
+##Varieties = variety
+##Studies = study
+
+from textblob import Word
+
+word1 = Word("studies")
+word2 = Word("varieties")
+
+print(word1.lemmatize())
+print(word2.lemmatize())
+
+
+########################
+happy = Word("happy")
+
+print(happy.definitions)
