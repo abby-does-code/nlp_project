@@ -88,3 +88,40 @@ print(word2.lemmatize())
 happy = Word("happy")
 
 print(happy.definitions)
+
+# Method synsets
+
+for synset in happy.synsets:
+    print(synset)
+
+# To access object in synsets, we use the lemmas object
+for synset in happy.synsets:
+    for lemma in synset.lemmas():
+        print(lemma)
+        print(lemma.name())
+lemmas = happy.synsets[0].lemmas()
+print(lemmas)
+
+for lemma in lemmas[0].antonyms():
+    print(lemma.name())
+
+
+##############################################################
+# Looking for stop words i think
+# Stop words are common words unnecessray for analysis
+
+import nltk
+
+"""
+nltk.download("stopwords")"""
+
+from nltk.corpus import stopwords
+
+stops = stopwords.words("English")
+print(stops)
+
+blob = TextBlob("Today is a beautiful day.")
+print(blob.words)
+
+cleaned_list = [word for word in blob.words if word not in stops]
+print(cleaned_list)
