@@ -1,7 +1,7 @@
 from textblob import TextBlob
 import nltk
 
-nltk.donwload("stopwords")
+nltk.download("stopwords")
 from pathlib import Path
 from nltk.corpus import stopwords
 
