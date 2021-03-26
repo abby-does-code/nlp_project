@@ -5,10 +5,6 @@ nltk.download("stopwords")
 from pathlib import Path
 from nltk.corpus import stopwords
 
-# Error:
-""" "/Users/abigailbrown/Library/Mobile Documents/com~apple~CloudDocs/Advanced_Python/NLP/nlp_2.py", line 24, in <listcomp>
-    items = [item for item in items if item[0] not in stops]
-NameError: name 'stops' is not defined"""
 
 import pandas as pd
 
@@ -22,7 +18,7 @@ print(blob.word_counts["romeo"])
 
 print(blob.word_counts["thou"])
 
-print(blob.words.count("joy"))"""
+print(blob.words.count("joy"))
 
 # Let's call the word counts items method
 items = blob.word_counts.items()
@@ -75,4 +71,15 @@ df.plot.bar(
 
 # Functioinal!
 
-##Graph does not show.....
+##Graph does not show....."""
+
+mask_image = imageio.imread("mask_hearth.png")
+
+wordcloud = WordCloud(colormap="prism", mask=mask_image, background_color="white")
+
+wordcloud = wordcloud.generate(blob)
+
+worldcloud = wordcloud.to_file("RomeoAndJulietHeart.png")
+
+plt.imshow(wordcloud)
+print("done")
