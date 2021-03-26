@@ -29,13 +29,15 @@ items = blob.word_counts.items()
 
 # Use a list comprehension to eliminate any tuples containing stops
 items = [item for item in items if item[0] not in stops]
-print(items[:10]) #first ten items
+print(items[:10])  # first ten items
 
-#These are just words; no order!
+##The expression item[0] gets the word from each tuple so we can check whether it's in stop_words
+
+# These are just words; no order!
 
 
 ## To determien teh top 20 words, let's sort the utples in items in descending order.
-## We can use built-in function sorted with a key ##argument to sort tuples 
+## We can use built-in function sorted with a key ##argument to sort tuples
 ## by the element in each tuple. Tospecifcy the tuple ##element, use the "itemgetter" function from Python ##standard library
 
 
@@ -45,14 +47,17 @@ from operator import itemgetter
 sorted_items = sorted(items)
 print(sorted_items[:10])
 
+# New sorting method:
 sorted_items = sorted(items, key=itemgetter(1), reverse=True)
 print(sorted_items[:10])
 
+# As sorted orders items' elements, it accesses the element at index 1 in each tuple value
+
+
 tops = stopwords.words("english")
+more_stops = ["thee", "thy", "thou"]
 
 stops += more_stops
-
-
 # Grab top 20
 top20 = sorted_items[:20]
 
@@ -66,4 +71,8 @@ import matplotlib.pyplot as plt
 
 df.plot.bar(
     x="word", y="count", rot=0, legend=False, color=["y", "c", "m", "b", "g", "r"]
-)"""
+)
+
+# Functioinal!
+
+##Graph does not show.....
