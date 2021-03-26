@@ -3,7 +3,7 @@
 
 from textblob import TextBlob
 
-'''
+
 text = "Today is a beautiful day. Tomorrow looks like bad weather."
 
 blob = TextBlob(text)
@@ -26,7 +26,7 @@ print(round(blob.sentiment.polarity, 3))
 
 print(round(blob.sentiment.subjectivity, 3))
 
-"""sentences = blob.sentences
+sentences = blob.sentences
 for sentence in sentences:
     print(sentence)
     print(sentence.sentiment)
@@ -64,7 +64,7 @@ corrected_sentence = sentence.correct()
 
 
 # print(corrected_sentence)
-# print(corrected_word)'''
+# print(corrected_word)
 
 ##########################################################
 ##########################################################
@@ -112,7 +112,7 @@ for lemma in lemmas[0].antonyms():
 
 import nltk
 
-"""
+
 nltk.download("stopwords")"""
 
 from nltk.corpus import stopwords
