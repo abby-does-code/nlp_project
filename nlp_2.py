@@ -5,11 +5,16 @@ import nltk
 from pathlib import Path
 from nltk.corpus import stopwords
 
+# Error:
+""" "/Users/abigailbrown/Library/Mobile Documents/com~apple~CloudDocs/Advanced_Python/NLP/nlp_2.py", line 24, in <listcomp>
+    items = [item for item in items if item[0] not in stops]
+NameError: name 'stops' is not defined"""
+
 import pandas as pd
 
 blob = TextBlob(Path("RomeoAndJuliet.txt").read_text())
 
-print(blob.words["juliet"])
+print(blob.word_counts["juliet"])
 
 print(blob.word_counts["romeo"])
 

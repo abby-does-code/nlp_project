@@ -30,7 +30,7 @@ sentences = blob.sentences
 for sentence in sentences:
     print(sentence)
     print(sentence.sentiment)
-    print(round(sentence.sentiment.polarity, 3))"""
+    print(round(sentence.sentiment.polarity, 3))
 
 from textblob.sentiments import NaiveBayesAnalyzer
 
@@ -69,8 +69,7 @@ corrected_sentence = sentence.correct()
 ##########################################################
 ##########################################################
 
-# Stemming algorithms work by cutting off the end or beginning of the word, taking
-# common prefizes and suffixes that can be foudn in an inflected word.
+# Stemming algorithms work by cutting off the end or beginning of #the word; reduces diffeerent morphoological variants of a word #to the root base.
 
 ##Varieties = variety
 ##Studies = study
@@ -113,7 +112,7 @@ for lemma in lemmas[0].antonyms():
 import nltk
 
 
-nltk.download("stopwords")"""
+nltk.download("stopwords")
 
 from nltk.corpus import stopwords
 
@@ -125,3 +124,6 @@ print(blob.words)
 
 cleaned_list = [word for word in blob.words if word not in stops]
 print(cleaned_list)
+
+
+#Note: ran this code after the craziness on 3/24; functional
