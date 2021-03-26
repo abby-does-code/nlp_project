@@ -14,7 +14,6 @@ document = nlp(
 for entity in document.ents:
     print(entity.text, ":", entity.label_)
 
-'''ERROR: OSError: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory.'''
+"""ERROR: OSError: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory."""
 
 from pathlib import Path
-
