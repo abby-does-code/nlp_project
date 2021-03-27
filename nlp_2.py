@@ -32,9 +32,10 @@ print(items[:10])  # first ten items
 # These are just words; no order!
 
 
-## To determien teh top 20 words, let's sort the utples in items in descending order.
-## We can use built-in function sorted with a key ##argument to sort tuples
-## by the element in each tuple. Tospecifcy the tuple ##element, use the "itemgetter" function from Python ##standard library
+## To determine the top 20 words, let's sort the tuples in items in descending order.
+## We can use built-in function sorted with a key 
+##argument to sort tuples
+## by the element in each tuple. To specifcy the tuple ##element, use the "itemgetter" function from Python ##standard library
 
 
 # itemgetter is a native python command
@@ -50,7 +51,7 @@ print(sorted_items[:10])
 # As sorted orders items' elements, it accesses the element at index 1 in each tuple value
 
 
-tops = stopwords.words("english")
+stops = stopwords.words("english")
 more_stops = ["thee", "thy", "thou"]
 
 stops += more_stops
@@ -73,7 +74,7 @@ df.plot.bar(
 
 ##Graph does not show....."""
 
-mask_image = imageio.imread("mask_hearth.png")
+mask_image = imageio.imread("mask_heart.png")
 
 wordcloud = WordCloud(colormap="prism", mask=mask_image, background_color="white")
 
@@ -83,3 +84,5 @@ worldcloud = wordcloud.to_file("RomeoAndJulietHeart.png")
 
 plt.imshow(wordcloud)
 print("done")
+
+# NameError: name 'imageio' is not defined
