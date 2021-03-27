@@ -11,9 +11,16 @@ document = nlp(
     + "developing web technologies"
 )
 
-for entity in document.ents:
-    print(entity.text, ":", entity.label_)
-
-"""ERROR: OSError: [E050] Can't find model 'en_core_web_sm'. It doesn't seem to be a Python package or a valid path to a data directory."""
+# for entity in document.ents:
+# print(entity.text, ":", entity.label_)
+# OUTPUT: 1994 : DATE
+#         Time Berners-Lee : ORG
 
 from pathlib import Path
+
+document1 = nlp(Path("RomeoAndJuliet.txt").read_text())
+document2 = nlp(Path("EdwardTheSecond.txt").read_text())
+
+# print(document1.similarity(document2))
+# OUTPUT: 0.9170757060169017
+
