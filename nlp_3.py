@@ -23,4 +23,3 @@ document2 = nlp(Path("EdwardTheSecond.txt").read_text())
 
 # print(document1.similarity(document2))
 # OUTPUT: 0.9170757060169017
-
