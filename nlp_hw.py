@@ -19,6 +19,8 @@ stops = stopwords.words("English")
 
 # Functional at this ^^^ point
 
+more_stops = ["thy", "ye", "verily", "thee", "hath", "say", "thou", "art", "shall"]
+stops += more_stops
 
 blob = TextBlob(Path("book_of_john_text.txt").read_text())
 
@@ -46,10 +48,6 @@ sorted_nouns = sorted(noun_list, key=itemgetter(1), reverse=True)
 ##Functional at this ^^^ point!
 
 
-stops = stopwords.words("english")
-more_stops = ["thy", "ye", "verily", "thee", "hath", "say", "thou", "art", "shall"]
-stops += more_stops
-
 # Grab the top 15:
 top15 = sorted_nouns[:15]
 print(top15)
@@ -72,5 +70,3 @@ import matplotlib.pyplot as plt
 # Maybe show me?
 plt.imshow(wordcloud)
 print("done")
-
-# AttributeError: module 'wordcloud' has no attribute 'generate'"""
