@@ -30,9 +30,17 @@ items = [item for item in items if item[0] not in stops]
 
 ## Functional at this ^^^ point!
 
+# get JUST the nouns
+
+nouns = blob.noun_phrases
+
+noun_list = [item for item in items if item[0] in nouns]
+print(items[:10])
+
+
 from operator import itemgetter
 
-sorted_items = sorted(items, key=itemgetter(1), reverse=True)
+sorted_nouns = sorted(noun_list, key=itemgetter(1), reverse=True)
 # print(sorted_items[:10])
 
 ##Functional at this ^^^ point!
@@ -43,22 +51,26 @@ more_stops = ["thy", "ye", "verily", "thee", "hath", "say", "thou", "art", "shal
 stops += more_stops
 
 # Grab the top 15:
-top15 = sorted_items[:15]
+top15 = sorted_nouns[:15]
 print(top15)
 
 
 # Time for wordcloud....
 
-import wordcloud
+from wordcloud import WordCloud
 
-"""
-mask_image = imageio.imread("mask_heart.png")
-wordcloud = WordCloud(colormap="prism", mask=mask_image, background_color="white")"""
 
-wordcloud = wordcloud.generate(blob)
+wordcloud = WordCloud(colormap="prism", background_color="white")
+
+wordcloud = wordcloud.generate(str(top15))
 wordcloud = wordcloud.to_file("BookOfJohn.png")
 
+# matplotlib
+import matplotlib.pyplot as plt
+
+
+# Maybe show me?
 plt.imshow(wordcloud)
 print("done")
 
-#AttributeError: module 'wordcloud' has no attribute 'generate'
+# AttributeError: module 'wordcloud' has no attribute 'generate'"""
